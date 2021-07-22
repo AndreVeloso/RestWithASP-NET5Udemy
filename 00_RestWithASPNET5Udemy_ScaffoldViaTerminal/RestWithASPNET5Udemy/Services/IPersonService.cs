@@ -1,11 +1,14 @@
-﻿using System;
+﻿using RestWithASPNET5Udemy.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RestWithASPNET5Udemy.Services
 {
-    interface IPersonService
+    public interface IPersonService
     {
+        Person Create(Person person);
+        Person FindById(long id);
+        List<Person> FindAll();
+        Person Update(Person person);
+        void Delete(long id);
     }
 }

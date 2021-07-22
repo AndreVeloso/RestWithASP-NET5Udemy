@@ -26,13 +26,18 @@ namespace RestWithASPNET5Udemy
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public object ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services)
         {
 
             services.AddControllers();
 
             //Dependency Injection
             services.AddScoped<IPersonService, PersonServiceImplementation>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RestWithASPNET5Udemy", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

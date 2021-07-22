@@ -10,7 +10,7 @@ using RestWithASPNET5Udemy.Services;
 namespace RestWithASPNET5Udemy.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class PersonController : ControllerBase
     {
 
